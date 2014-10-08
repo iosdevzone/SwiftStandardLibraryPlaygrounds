@@ -1,4 +1,5 @@
-all: transcode.playground
+all: GeneratorsSequencesCollections.playground \
+transcode.playground
 
 %.playground: %.md
 	playground -p ios $< 
