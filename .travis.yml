@@ -1,0 +1,7 @@
+language: objective-c
+
+install:
+- npm install -g swift-playground-builder
+
+script:
+- make
