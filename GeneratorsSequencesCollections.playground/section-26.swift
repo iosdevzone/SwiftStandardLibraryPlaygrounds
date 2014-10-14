@@ -9,15 +9,10 @@ struct PowersOfTwoCollection : CollectionType
         self.endIndex = end
     }
     func generate() -> GeneratorOf<Int> {
-        var power : Int = self.startIndex
+        var power : Int = 0
         return GeneratorOf<Int> {
             (power < self.endIndex) ? pow2(power++) : nil
         }
     }
     subscript(i: Index) -> Int { return pow2(i) }
 }
-
-for x in reverse(PowersOfTwoCollection(start:0,end:10)) {
-    println(x)
-}
-

@@ -25,7 +25,10 @@
         <code source-file-name='section-22.swift'/>
         <documentation relative-path='section-22.html'/>
         <code source-file-name='section-24.swift'/>
-        <code source-file-name='section-25.swift'/>
+        <documentation relative-path='section-24.html'/>
+        <code source-file-name='section-26.swift'/>
+        <documentation relative-path='section-26.html'/>
+        <code source-file-name='section-28.swift'/>
     </sections>
     <timeline fileName='timeline.xctimeline'/>
 </playground>

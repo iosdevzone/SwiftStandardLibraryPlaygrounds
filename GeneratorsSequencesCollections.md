@@ -203,9 +203,11 @@ protocol CollectionType : _CollectionType, SequenceType {
     }
 */
 ```
+So a `Collection` is a `Sequence` that can be accessed via a subscript.
 
+We can upgrade our `PowersOfTwoSequence` to a `Collection` with a few small code changes.
 ```swift
-struct PowersOfTwoCollection : SequenceType
+struct PowersOfTwoCollection : CollectionType
 {
     typealias Index = Int
     let startIndex : Int
@@ -218,11 +220,17 @@ struct PowersOfTwoCollection : SequenceType
     func generate() -> GeneratorOf<Int> {
         var power : Int = 0
         return GeneratorOf<Int> {
-            (power < self.endPower) ? pow2(power++) : nil
+            (power < self.endIndex) ? pow2(power++) : nil
         }
     }
     subscript(i: Index) -> Int { return pow2(i) }
 }
+```
+
+While many standard library functions can operate on sequences, some,
+for example `reverse` require an object conforming to `CollectionType`.
+
+``` swift
 /* Now that we're a collection we can go backwards! */
 for x in reverse(PowersOfTwoCollection(start:0,end:10)) {
     println(x)
