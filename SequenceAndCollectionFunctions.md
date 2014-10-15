@@ -12,7 +12,7 @@ data[seventh]
 ```
 
 ## contains
-Determines if a sequence contains an element 
+Determines if a `SequenceType` contains an element 
 ```swift
 contains(data, 7.0) // true
 ```
@@ -29,13 +29,13 @@ count(data.startIndex..<data.endIndex) // 8
 ```
 
 ## countElements
-Counts the number of elements in a collection
+Counts the number of elements in a `CollectionType`
 ```swift
 countElements(data) // 8
 ```
 
 ## distance
-The distance in elements between two ForwardIndexTypes
+The distance in elements between two `ForwardIndexTypes`
 ```swift
 distance(data.startIndex, data.endIndex) // 8
 ```
@@ -98,7 +98,7 @@ Returns the range of valid indices for a collection
 indices(oneTwoThree)
 ```
 ## insert
-Inserts a new element into a RangeReplaceableCollectionType
+Inserts a new element into a `RangeReplaceableCollectionType`
 ```swift
 var zeroOneTwoThree = oneTwoThree
 insert(&zeroOneTwoThree, 0, atIndex:0)
@@ -156,20 +156,20 @@ sum
 reduce(oneTwoThree, 0, +)
 ```
 ## removeAll
-Remove all elements from a RangeReplaceableCollectionType, optionally requesting the storage capacity be preserved.
+Remove all elements from a `RangeReplaceableCollectionType`, optionally requesting the storage capacity be preserved.
 ```swift
 removeAll(&zeroOneTwoThree, keepCapacity: true)
 zeroOneTwoThree.capacity
 ```
 ## removeAtIndex
-Remove and return an element from a RangeReplaceableCollectionType
+Remove and return an element from a `RangeReplaceableCollectionType`
 ```swift
 zeroOneTwoThree = [0,1,2,3]
 removeAtIndex(&zeroOneTwoThree, 2) //2
 zeroOneTwoThree // [0,1,3]
 ```
 ## removeLast
-Remove and return the last element from a nonempty RangeReplaceableCollectionType
+Remove and return the last element from a nonempty `RangeReplaceableCollectionType`
 ```swift
 zeroOneTwoThree = [0,1,2,3]
 removeLast(&zeroOneTwoThree)
@@ -181,7 +181,7 @@ zeroOneTwoThree = [0,1,2,3]
 removeRange(&zeroOneTwoThree, 1...2)
 ```
 ## reverse
-Reverses a collection with an index conforming to BidirectionalIndexType
+Reverses a `CollectionType` with an index conforming to `BidirectionalIndexType`
 ```swift
 zeroOneTwoThree = [0,1,2,3]
 var threeTwoOneZero = reverse(zeroOneTwoThree)
@@ -195,7 +195,7 @@ threeTwoOneZero // [0,1,2,3]
 sort(&threeTwoOneZero) { x,y in x>y }
 ```
 ## sorted
-Returns the array obtained by sorting a sequence using the < operator or a user supplied comparison function.
+Returns the `Array` obtained by sorting a `SequenceType` using the < operator or a user supplied comparison function.
 ```swift
 let random = [1,6,2,8,3,3,2,8,7]
 let randomSortedAscending = sorted(random)
@@ -204,7 +204,7 @@ randomSortedDescending
 ```
 
 ## splice
-Inserts the elements of a collection into a RangeReplaceableCollectionType at a given index.
+Inserts the elements of a collection into a `RangeReplaceableCollectionType` at a given index.
 ```swift
 var gap = [0,1,2,7,8,9]
 var missing = [3,4,5,6]
@@ -219,18 +219,26 @@ splitPath = split(path, { c in c == "/" }, maxSplit:2, allowEmptySlices:true)
 splitPath
 ```
 ## startsWith
-Determines if the prefix of one sequence is equivalent to another sequence either using the == operator or a user defined equivalence function
+Determines if the prefix of one `SequenceType` is equivalent to another `SequenceType` either using the == operator or a user defined equivalence function
 ```swift
 let oneToFive = [1,2,3,4,5]
 let oneToThree = [1,2,3]
 startsWith(oneToFive, oneToThree)
 
-let uppercaseString = "UPPERCASE"
-let lowerCasePrefix = "upper"
-startsWith(uppercaseString, lowerCasePrefix) { x,y in String(x).lowercaseString == String(y).lowercaseString }
+let floats125 = [1.0, 2.0, 3.0, 4.0, 5.0]
+let fuzzyPrefix = [1.01, 1.99, 3.01 ]
+let isFuzzyPrefix = startsWith(floats125, fuzzyPrefix) { x,y in abs(x-y) < 0.02 }
+isFuzzyPrefix
 ```
 
 ## stride
+Creates sequences from a given value, to or through a given value, steping by a given increment (or stride). 
+```Swift
+let to = stride(from:0, to:100, by:10)
+map(to) { x in println(x) }
+let through = stride(from:0, through:100, by:10)
+map(through) { x in println(x) }
+```
 
 ## underestimateCount
 Will be covered in a future post.
