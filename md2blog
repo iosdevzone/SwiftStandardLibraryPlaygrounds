@@ -1,0 +1,5 @@
+#!/bin/bash
+sed '/^##/s/$/<\/h2>/' | sed 's/^## /<h2>/' | \
+sed 's/```[Ss]wift/\[swift\]/' | \
+sed 's/```/\[\/swift\]/' | \
+sed -E 's/`([a-zA-Z]+)`/{swift}\1{\/swift}/g'

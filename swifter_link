@@ -1,0 +1,2 @@
+#!/bin/bash
+sed -E 's#@([a-zA-Z]+)#<a href="http://swifter.natecook.com/func/\1"><code>\1</code> reference on Swifter<\/a>#'
