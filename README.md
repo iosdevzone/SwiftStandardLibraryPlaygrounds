@@ -12,6 +12,6 @@ example of its use.
 
 The current playgrounds are:
 
-
-
+| Playground            | Description                                                     |
+|-----------------------|------------------------------------------------------------------|
 | transcode.playground  | Demonstrates transcodeing between Unicode formats with transcode |
