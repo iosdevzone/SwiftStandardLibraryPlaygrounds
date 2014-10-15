@@ -1,0 +1,1 @@
+minElement(zeroOneTwoThree) //0

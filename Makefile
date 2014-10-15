@@ -1,4 +1,5 @@
 all: GeneratorsSequencesCollections.playground \
+SequenceAndCollectionFunctions.playground \
 transcode.playground
 
 %.playground: %.md
