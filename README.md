@@ -14,4 +14,7 @@ The current playgrounds are:
 
 | Playground            | Description                                                     |
 |-----------------------|------------------------------------------------------------------|
-| transcode.playground  | Demonstrates transcodeing between Unicode formats with transcode |
+| GeneratorsSequencesAndCollections.playground | `GeneratorType`, `SequenceType` and `CollectionType` |
+| SequenceAndCollectionFunctions.playground | Functions that operate on `SequenceType` and `CollectionType` (e.g `map`, `reduce`) |
+| Zip2.playground       | Combining two arrays                                  |
+| transcode.playground  | Transcoding between Unicode formats with `transcode` |
