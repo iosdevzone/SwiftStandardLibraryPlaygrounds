@@ -4,6 +4,6 @@ install:
 - npm install -g swift-playground-builder
 
 script:
-- pushd build
+- pushd src
 - make
 - popd
